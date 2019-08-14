@@ -1,0 +1,46 @@
+{
+  "name": "bowhead-js",
+  "version": "0.0.0",
+  "description": "Tiny string interpolation library",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "author": "Mgen (https://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/bowhead-js",
+  "bugs": "https://github.com/mgenware/bowhead-js/issues",
+  "keywords": [
+    "layit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/bowhead-js.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run t",
+    "t": "jest",
+    "build": "cross-env NODE_ENV=production yarn test",
+    "compile": "tsc -b tests",
+    "dev": "cross-env NODE_ENV=development yarn run clean && tsc -b tests -w",
+    "prepublishOnly": "yarn run test",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "clean": "del-cli dist && del-cli dist_tests"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.1",
+    "cross-env": "^5.2.0",
+    "del-cli": "^2.0.0",
+    "jest": "^24.8.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {}
+}
