@@ -19,3 +19,7 @@ test('lowercase', () => {
 test('capitalized', () => {
   expect(t('{0:capitalized}', 'ui')).toBe('Ui');
 });
+
+test('Ignore unsupported func', () => {
+  expect(t('{0:haha}', 'ui')).toBe('ui');
+});
