@@ -1,25 +1,28 @@
 import t from '../';
+import * as assert from 'assert';
 
-test('Basic', () => {
-  expect(t('-{1} {0} {1}', 23, 'haha')).toBe('-haha 23 haha');
+const expect = assert.equal;
+
+it('Basic', () => {
+  expect(t('-{1} {0} {1}', 23, 'haha'), '-haha 23 haha');
 });
 
-test('Index out of range', () => {
-  expect(t('-{1} {7}', 23, 'haha')).toBe('-haha <7 is out of range>');
+it('Index out of range', () => {
+  expect(t('-{1} {7}', 23, 'haha'), '-haha <7 is out of range>');
 });
 
-test('uppercase', () => {
-  expect(t('{0:uppercase}', 'Haha')).toBe('HAHA');
+it('uppercase', () => {
+  expect(t('{0:uppercase}', 'Haha'), 'HAHA');
 });
 
-test('lowercase', () => {
-  expect(t('{0:lowercase}', 'HahA')).toBe('haha');
+it('lowercase', () => {
+  expect(t('{0:lowercase}', 'HahA'), 'haha');
 });
 
-test('capitalized', () => {
-  expect(t('{0:capitalized}', 'ui')).toBe('Ui');
+it('capitalized', () => {
+  expect(t('{0:capitalized}', 'ui'), 'Ui');
 });
 
-test('Ignore unsupported func', () => {
-  expect(t('{0:haha}', 'ui')).toBe('ui');
+it('Ignore unsupported func', () => {
+  expect(t('{0:haha}', 'ui'), 'ui');
 });
