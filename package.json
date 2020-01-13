@@ -1,6 +1,6 @@
 {
   "name": "bowhead-js",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Tiny string interpolation library",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
