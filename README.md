@@ -33,11 +33,15 @@ format('{0:uppercase}', 'haha'); // "HAHA"
 
 ### Error handling
 
-By default, bowhead-js mutes errors being thrown and returns error messages in resulting strings, you can disable this behavior by calling `muteExceptions`:
+By default, bowhead-js mutes index-out-of-range errors being thrown and returns error messages in resulting strings, you can disable this behavior by calling `muteExceptions`:
 
 ```js
 import { muteExceptions } from 'bowhead-js';
 
+format('{1} {7}', 23, 'haha'))
+// Prints 'haha <7 is out of range>'
+
 muteExceptions(false);
-// Now errors will be thrown
+format('{1} {7}', 23, 'haha'))
+// Error thrown.
 ```
