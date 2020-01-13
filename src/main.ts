@@ -45,6 +45,10 @@ export default function format(str: string, ...args: unknown[]): string {
           }
           break;
         }
+
+        default:
+          val = `${val}:${funcName}`;
+          break;
       }
     }
     return val;

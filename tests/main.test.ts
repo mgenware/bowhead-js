@@ -24,5 +24,5 @@ it('capitalized', () => {
 });
 
 it('Ignore unsupported func', () => {
-  expect(t('{0:haha}', 'ui'), 'ui');
+  expect(t('{0:haha}', 'ui'), 'ui:haha');
 });
