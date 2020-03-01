@@ -1,7 +1,7 @@
 # bowhead-js
 
+[![Build Status](https://github.com/mgenware/bowhead-js/workflows/Build/badge.svg)](https://github.com/mgenware/bowhead-js/actions)
 [![MEAN Module](https://img.shields.io/badge/MEAN%20Module-TypeScript-blue.svg?style=flat-square)](https://github.com/mgenware/MEAN-Module)
-[![Build Status](https://img.shields.io/travis/mgenware/bowhead-js.svg?style=flat-square&label=Build+Status)](https://travis-ci.org/mgenware/bowhead-js)
 [![npm version](https://img.shields.io/npm/v/bowhead-js.svg?style=flat-square)](https://npmjs.com/package/bowhead-js)
 [![Node.js Version](http://img.shields.io/node/v/bowhead-js.svg?style=flat-square)](https://nodejs.org/en/)
 
