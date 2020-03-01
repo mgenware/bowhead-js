@@ -26,3 +26,13 @@ it('capitalized', () => {
 it('Ignore unsupported func', () => {
   expect(t('{0:haha}', 'ui'), 'ui:haha');
 });
+
+it('countable', () => {
+  expect(t('{0:countable:aaa}', 'notANumber'), 'notANumber');
+  expect(t('{0:countable:fish:fishes}', '1'), 'fish');
+  expect(t('{0:countable:fish:fishes}', '2'), 'fishes');
+  expect(t('{0:countable:fish:fishes}', '0'), 'fishes');
+  // "deer" is both singular and plural.
+  expect(t('{0:countable:deer}', '1'), 'deer');
+  expect(t('{0:countable:deer}', '2'), 'deer');
+});
