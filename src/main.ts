@@ -27,7 +27,9 @@ export default function format(str: string, ...args: unknown[]): string {
       }
     }
 
-    let input = args[idx] ? (args[idx] as object).toString() : '';
+    let input = args[idx]
+      ? (args[idx] as Record<string, unknown>).toString()
+      : '';
     const payloadStrings = payload.split(':');
     const funcName = payloadStrings[0];
     const extraParams = payloadStrings.slice(1);
