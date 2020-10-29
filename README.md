@@ -22,15 +22,15 @@ import format from 'bowhead-js';
 format('{1} {0} {1}', 1, 'haha'); // 'haha 1 haha'
 
 // Custom functions.
-format('{0:uppercase}', 'haha'); // 'HAHA'
+format('{0|uppercase}', 'haha'); // 'HAHA'
 
 // Plurals.
-format('{0:countable:fish:fishes}', '1'); // 'fish';
-format('{0:countable:fish:fishes}', '2'); // 'fishes'
-format('{0:countable:fish:fishes}', '0'); // 'fishes'
+format('{0|countable|fish|fishes}', '1'); // 'fish';
+format('{0|countable|fish|fishes}', '2'); // 'fishes'
+format('{0|countable|fish|fishes}', '0'); // 'fishes'
 // "deer" is both singular and plural.
-format('{0:countable:deer}', '1'); // 'deer'
-format('{0:countable:deer}', '2'); // 'deer'
+format('{0|countable|deer}', '1'); // 'deer'
+format('{0|countable|deer}', '2'); // 'deer'
 ```
 
 ### Functions available

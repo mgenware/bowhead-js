@@ -1,4 +1,4 @@
-const regex = /{([0-9]+)(\:[a-z\:]+)?}/g;
+const regex = /{([0-9]+)(|[a-z|]+)?}/g;
 let isMuted = true;
 
 export function muteExceptions(val: boolean) {
@@ -30,7 +30,7 @@ export default function format(str: string, ...args: unknown[]): string {
     let input = args[idx]
       ? (args[idx] as Record<string, unknown>).toString()
       : '';
-    const payloadStrings = payload.split(':');
+    const payloadStrings = payload.split('|');
     const funcName = payloadStrings[0];
     const extraParams = payloadStrings.slice(1);
     if (funcName) {
@@ -64,7 +64,7 @@ export default function format(str: string, ...args: unknown[]): string {
         }
 
         default:
-          input = `${input}:${funcName}`;
+          input = `${input}|${funcName}`;
           break;
       }
     }
