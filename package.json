@@ -4,7 +4,7 @@
   "description": "Tiny string interpolation library",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
-  "author": "Mgen (https://github.com/mgenware)",
+  "author": "Mgenware (https://github.com/mgenware)",
   "homepage": "https://github.com/mgenware/bowhead-js",
   "bugs": "https://github.com/mgenware/bowhead-js/issues",
   "keywords": [
@@ -16,14 +16,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run t",
-    "t": "mocha dist_tests/*.js",
-    "build": "cross-env NODE_ENV=production yarn test",
-    "compile": "tsc -b tests",
-    "dev": "cross-env NODE_ENV=development yarn run clean && tsc -b tests -w",
-    "prepublishOnly": "yarn run test",
-    "lint": "eslint --max-warnings 0 --ext .ts src/ tests/",
-    "clean": "del-cli dist && del-cli dist_tests"
+    "r": "daizong",
+    "test": "daizong build"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -31,17 +25,22 @@
   "files": [
     "/dist/**/*.js",
     "/dist/**/*.ts",
+    "/dist/**/*.css",
     "/dist/**/*.map"
   ],
   "devDependencies": {
     "@types/mocha": "^8.0.3",
-    "@types/node": "^14.14.6",
-    "@typescript-eslint/eslint-plugin": "^4.6.0",
-    "@typescript-eslint/parser": "^4.6.0",
+    "@types/node": "^14.14.7",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
     "cross-env": "^7.0.2",
+    "daizong": "^0.11.0",
     "del-cli": "^3.0.1",
-    "eslint": "^7.12.1",
-    "mocha": "^8.2.0",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-typescript-lite": "^12.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.2.1",
+    "source-map-support": "^0.5.19",
     "typescript": "^4.0.5"
   },
   "dependencies": {}
