@@ -33,10 +33,13 @@ it('Special chars', () => {
 
 it('countable', () => {
   expect(t('{0} {0|countable|aaa}', 'notANumber'), 'notANumber notANumber');
-  expect(t('{0} {0|countable|fish|fishes}', '1'), '1 fish');
-  expect(t('{0} {0|countable|fish|fishes}', '2'), '2 fishes');
-  expect(t('{0} {0|countable|fish|fishes}', '0'), '0 fishes');
+  expect(t('{0} {0|countable|fish|fishes}', 1), '1 fish');
+  expect(t('{0} {0|countable|fish|fishes}', 2), '2 fishes');
+  expect(
+    t('{0} {1} {1|countable|fish|fishes}', 'I have', 0),
+    'I have 0 fishes',
+  );
   // "deer" is both singular and plural.
-  expect(t('{0} {0|countable|deer}', '1'), '1 deer');
-  expect(t('{0} {0|countable|deer}', '2'), '2 deer');
+  expect(t('{0} {0|countable|deer}', 1), '1 deer');
+  expect(t('{0} {0|countable|deer}', 2), '2 deer');
 });

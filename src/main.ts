@@ -27,47 +27,42 @@ export default function format(str: string, ...args: unknown[]): string {
       }
     }
 
-    let input = args[idx]
-      ? (args[idx] as Record<string, unknown>).toString()
-      : '';
+    const input = args[idx];
+    const inputString = `${input}`;
     const payloadStrings = payload.split('|');
     const funcName = payloadStrings[0];
     const extraParams = payloadStrings.slice(1);
     if (funcName) {
       switch (funcName) {
         case 'lowercase':
-          input = input.toLowerCase();
-          break;
+          return inputString.toLowerCase();
 
         case 'uppercase': {
-          input = input.toUpperCase();
-          break;
+          return inputString.toUpperCase();
         }
 
         case 'capitalized': {
-          if (input) {
-            input = input.charAt(0).toUpperCase() + input.substr(1);
+          if (inputString) {
+            return inputString.charAt(0).toUpperCase() + inputString.substr(1);
           }
-          break;
+          return inputString;
         }
 
         case 'countable': {
-          const inputNum = parseInt(input, 10);
-          if (!isNaN(inputNum)) {
-            if (inputNum === 1) {
-              input = extraParams[0] || '';
-            } else {
-              input = extraParams[1] || extraParams[0] || '';
-            }
+          const inputNum = typeof input === 'number' ? input : -1;
+          if (inputNum === 1) {
+            return extraParams[0] || '';
+          } else if (inputNum >= 0) {
+            return extraParams[1] || extraParams[0] || '';
           }
-          break;
+          // Invalid number, return the input string instead.
+          return inputString;
         }
 
         default:
-          input = `${input}|${funcName}`;
-          break;
+          return `${input}|${funcName}`;
       }
     }
-    return input;
+    return inputString;
   });
 }
