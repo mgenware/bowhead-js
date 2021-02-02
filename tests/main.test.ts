@@ -1,5 +1,6 @@
+/* eslint-disable import/extensions */
 import * as assert from 'assert';
-import t from '..';
+import t from '../dist/main.js';
 
 const expect = assert.equal;
 
