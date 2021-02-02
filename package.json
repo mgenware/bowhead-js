@@ -1,6 +1,6 @@
 {
   "name": "bowhead-js",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Tiny string interpolation library",
   "type": "module",
   "exports": "./dist/main.js",
