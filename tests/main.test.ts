@@ -10,6 +10,7 @@ it('Basic', () => {
 
 it('Index out of range', () => {
   eq(t('-{1} {7}', 23, 'haha'), '-haha <7 is out of range>');
+  eq(t('{1|uppercase}', 'Haha'), '<1 is out of range>');
 });
 
 it('uppercase', () => {
