@@ -5,7 +5,7 @@ export function muteExceptions(val: boolean): void {
   isMuted = val;
 }
 
-export default function format(str: string, ...args: unknown[]): string {
+export default function strf(str: string, ...args: unknown[]): string {
   if (!str) {
     return str;
   }
