@@ -30,16 +30,16 @@
     "/dist/**/*.map"
   ],
   "devDependencies": {
-    "@types/mocha": "^9.0.0",
-    "@types/node": "^16.11.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.10",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
-    "daizong": "^0.16.1",
+    "daizong": "^0.25.6",
     "eslint": "^8.1.0",
     "eslint-config-mgenware": "^0.2.0",
     "eslint-plugin-import": "^2.25.2",
     "mgenware-tsconfig-node": "^14.0.2",
-    "mocha": "^9.1.3",
+    "mocha": "^10.1.0",
     "source-map-support": "^0.5.20",
     "typescript": "^4.4.4"
   }
